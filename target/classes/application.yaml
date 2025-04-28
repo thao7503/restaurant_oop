@@ -1,0 +1,29 @@
+server:
+  port: 5454
+
+spring:
+  application:
+    name: Online-Food-Ordering
+  datasource:
+    url: "jdbc:mysql://localhost:3306/RestaurantApp"
+    driver: "com.mysql.cj.jdbc.Driver"
+    username: root
+    password: thaonp7503
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    format-sql: true
+
+jwt:
+  signerKey: "FHrFbHtNaLq8JvBAW97J7RtnCt5kEDpUpBUWVKqQdj6kWsFuD2VL8erevqcFsEmwdGWthPXYt"
+
+payment:
+  vnPay:
+    url: https://sandbox.vnpayment.vn/paymentv2/vpcpay.html
+    returnUrl: http://localhost:5454/payment/vn-pay-callback
+    tmnCode: 1NMNEDJD
+    secretKey: SECRET_KEY=87L598VDDXDVX9RTOB22Q88Z3REDG010
+    version: 2.1.0
+    command: pay
+    orderType: other
